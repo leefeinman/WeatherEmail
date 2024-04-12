@@ -453,7 +453,7 @@ html_content = html_content.replace('{TABLE}', table_fn)
 #%% Send Email 
 
     #%%% Upload images to website host
-website_dir = '/Users/lvf27/Documents/personalwebsite/html5up-dimension/images'
+website_dir = 'the directory that is to be uploaded to the website  bucket'
  # copying images to proper directory
 shutil.copy("images/" + plot_fn, website_dir) 
 shutil.copy("images/" + table_fn, website_dir)
@@ -520,7 +520,7 @@ for name, email in addresses.items():
     em.add_alternative(final_html,
                         subtype='html')
 
-     # just gonna send it
+     # just gonna send it (https://youtu.be/mzOUgwsQ_hM?si=5VbKOisZ4NHBZBCI)
     with smtplib.SMTP_SSL('smtp.gmail.com', 465, context = context) as smtp:
         smtp.login(email_sender, email_password)
         smtp.sendmail(email_sender, email_receiver, em.as_string())
